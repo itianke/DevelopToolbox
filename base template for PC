@@ -1,8 +1,9 @@
+包含完整头部信息和主体结构的HTML基础模板。
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>NEC：更好的CSS方案</title>
+<title>hello word!</title>
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width"/>
@@ -29,3 +30,17 @@
 </div>
 </body>
 </html>
+
+=========================================================
+在网页的<head>中增加以上这句话，可以让网页的宽度自动适应手机屏幕的宽度。
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+
+其中：
+width=device-width ：表示宽度是设备屏幕的宽度
+initial-scale=1.0：表示初始的缩放比例
+minimum-scale=0.5：表示最小的缩放比例
+maximum-scale=2.0：表示最大的缩放比例
+user-scalable=yes：表示用户是否可以调整缩放比例
+
+
+
