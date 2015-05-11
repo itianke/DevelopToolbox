@@ -1,9 +1,12 @@
 
-//Back to top
-$(".backtop").click(function(){
-  $('body,html').animate({scrollTop:0},500);
-  return false;
-})
+// 返回页面顶部   
+$(document).ready(function(){   
+  $('.top').click(function() {    
+     $(document).scrollTo(0,500);    
+  });   
+});   
+//Create a link defined with the class .top   
+<a href="#" class="top">Back To Top</a> 
 
 //倒计时通用模块
 var timeCon = 60*60*24 //小时数
