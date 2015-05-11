@@ -1,5 +1,3 @@
-包含完整头部信息和主体结构的HTML基础模板。
-
 <!DOCTYPE html>
 <html>
 <head>
