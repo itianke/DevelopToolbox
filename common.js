@@ -3,10 +3,8 @@
 $(document).ready(function(){   
   $('.top').click(function() {    
      $(document).scrollTo(0,500);    
-  });   
-});   
-//Create a link defined with the class .top   
-<a href="#" class="top">Back To Top</a> 
+  }); 
+}); 
 
 //倒计时通用模块
 var timeCon = 60*60*24 //小时数
@@ -97,23 +95,6 @@ var checkIsNull = function(val) {
 var toDub = function(n) {
   return n < 10 ? '0' + n : '' + n;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
