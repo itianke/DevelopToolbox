@@ -96,6 +96,60 @@ var toDub = function(n) {
   return n < 10 ? '0' + n : '' + n;
 };
 
+/**
+* author keetian
+* date 20151204
+* function 拖拽
+* @param obj为拖拽对象
+*/
+var drag = function(obj) {
+	obj.onmousedown=function (ev){
+		var oEvent=ev || event;
+		var disX=oEvent.clientX-obj.offsetLeft;
+		var disY=oEvent.clientY-obj.offsetTop;
+		
+		document.onmousemove=function (ev){
+			var oEvent=ev || event;
+			var left=oEvent.clientX-disX;
+			var top=oEvent.clientY-disY;
+			
+			obj.style.left=left+'px';
+			obj.style.top=top+'px';
+		};
+		
+		document.onmouseup=function (){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			
+			obj.releaseCapture && obj.releaseCapture();
+		};
+		
+		obj.setCapture && obj.setCapture();
+		return false;
+	};
+}
+
+/**
+* author keetian
+* date 20151204
+* function 封装n到m的随机数函数
+* @param n m为数字区间
+*/
+var rnd = function(n, m) {
+	return Math.floor(Math.random()*(m-n)+n);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
