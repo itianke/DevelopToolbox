@@ -96,5 +96,24 @@ var toDub = function(n) {
   return n < 10 ? '0' + n : '' + n;
 };
 
+/**
+* author keetian
+* date 20151209
+* function 日期格式化
+* @param timpStamp为时间戳对象
+* @return 日期格式
+*/
+function FormatDate(timeStamp){
+  var year = timeStamp.getFullYear();
+  var month = timeStamp.getMonth() + 1;
+  var date = timeStamp.getDate();
+
+  var hour = timeStamp.getHours();
+  var minute = timeStamp.getMinutes();
+  var second = timeStamp.getSeconds();
+
+  return year + '-' + month + '-' + date;
+}
+
 
 
