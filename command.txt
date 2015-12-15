@@ -7,10 +7,24 @@ mac command:
   cd..  返回上级目录
   mkdir  新建目录
   rm  移除目录
-  ping 
   chmod -R 777 filename  获取文件读写权限
+  pwd 当前文件目录路径
   
+  date  显示系统当前时间和日期
+  cal  显示日历
+  ping 查看网络连通状态
   
 svn:
+  svn checkout  获取svn代码
+  svn up  更新
+  svn status  查看本地代码修改信息
+  svn ci -m 'message'  提交修改
+  svn list 查看目录中的文件
+  svn list -v  查看详细信息[修订人,版本号,文件大小等]
+  
+  svn log  查看所有日志
+  svn log -v filename 查看指定文件/夹的日志
+  svn log -r 4:20  查看版本4到20的日志 顺序
+  svn log -r 20:4  产看版本20到4的日志 逆序
 
 git:
