@@ -1,5 +1,3 @@
-win command:
-
 mac command:
   cd filename  定位下级目录
   cd filePath  定位到指定目录
