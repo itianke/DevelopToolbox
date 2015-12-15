@@ -1,10 +1,18 @@
 mac command:
+  ls  查看当前目录下的文件
+  ls -w  显示中文
+  ls -l  显示详细信息
+  ls -a  包括隐藏文件
+
   cd filename  定位下级目录
   cd filePath  定位到指定目录
   cd/  定位到根目录
   cd..  返回上级目录
+  cd /filePath/filename  转换目录
+  
   mkdir filename  新建目录
   rmdir filename  移除目录
+  cp 参数 源文件 目标文件  拷贝文件
   chmod -R 777 filename  获取文件读写权限
   pwd 当前文件目录路径
   
