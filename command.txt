@@ -1,0 +1,16 @@
+win command:
+
+mac command:
+  cd filename  定位下级目录
+  cd filePath  定位到指定目录
+  cd/  定位到根目录
+  cd..  返回上级目录
+  mkdir  新建目录
+  rm  移除目录
+  ping 
+  chmod -R 777 filename  获取文件读写权限
+  
+  
+svn:
+
+git:
