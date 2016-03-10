@@ -47,22 +47,23 @@ function getQueryString(name) {
   return null;
 }
 
-//设置跳转方式
-function geta(txt,typename,id,css){ 
-  var str="";
-  var isWeixin = getQueryString("openId");
-  if(isWeixin){
-    str+="<a class='"+ css +"' href='/product/Detail/index?productId="+id+"'>"+txt+"</a>";
-    return str;
-  }else{
-    if (browser.versions.ios){
-      str+="<a href='app://"+typename+"."+id+"'>"+txt+"</a>";
-      //str+="<a href='"+id+"'></a>";
-    }else{
-      str+="<a href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
-    }
-    return str;
-  }
+//跳转到产品详情页 设置app及wechart跳转方式
+function geta(txt,typename,id){	
+	var str="";
+	var isWeixin = getQueryString("openId");
+   var host = window.location.host;
+
+	if(isWeixin){
+		str+="<a href='"+id+"'></a>";
+		return str;
+   }else{
+   	if (browser.versions.ios) {
+         str += "<a href='app://" + typename + "." + id + "'>" + txt + "</a>";
+      }else{
+         str += "<a href=\"javascript:furl('" + typename + "','" + id + "')\">" + txt + "</a>";
+      }
+      return str;
+   }
 }
 
 
