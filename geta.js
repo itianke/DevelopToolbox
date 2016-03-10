@@ -48,22 +48,22 @@ function getQueryString(name) {
 }
 
 //跳转到产品详情页 设置app及wechart跳转方式
-function geta(txt,typename,id){	
-	var str="";
-	var isWeixin = getQueryString("openId");
-   var host = window.location.host;
+function geta(txt,typename,id){ 
+  var str="";
+  var isWeixin = getQueryString("openId");
+  var host = window.location.host;
 
-	if(isWeixin){
-		str+="<a href='"+id+"'></a>";
-		return str;
-   }else{
-   	if (browser.versions.ios) {
-         str += "<a href='app://" + typename + "." + id + "'>" + txt + "</a>";
-      }else{
-         str += "<a href=\"javascript:furl('" + typename + "','" + id + "')\">" + txt + "</a>";
-      }
-      return str;
-   }
+  if(isWeixin){
+    str+="<a href='"+id+"'></a>";
+    return str;
+  }else{
+    if (browser.versions.ios) {
+      str += "<a href='app://" + typename + "." + id + "'>" + txt + "</a>";
+    }else{
+      str += "<a href=\"javascript:furl('" + typename + "','" + id + "')\">" + txt + "</a>";
+    }
+    return str;
+  }
 }
 
 
