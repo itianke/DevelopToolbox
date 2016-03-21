@@ -1,3 +1,3 @@
-# code
-dev code
-[baidu](http://baidu.com)
+# 相关参考资料及说明
+
+[详说 Cookie, LocalStorage 与 SessionStorage](https://segmentfault.com/a/1190000002723469)
