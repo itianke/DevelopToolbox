@@ -1,8 +1,55 @@
 
+/*
+*2016-3-21 By tk
+**/
+
 Geolocation 地理位置定位：
-  getCurrentPosition()  获取当前位置
-  watchPosition()       监听位置变化
-  clearPosition()       清除位置信息
+-------------------------------------
+
+getCurrentPosition()  //获取当前位置
+watchPosition()       //监听位置变化
+clearPosition()       //清除位置信息
+
+获取当前位置:
+navigator.geolocaction.getCurrentPosition(function(pos){
+  console.log('纬度'+pos.coords.latitude);
+  console.log('经度'+pos.coords.longitude);
+  console.log('精度'+pos.coords.accuracy);
+})
+监听位置变化:
+var watchID = navigator.geolocaction.watchPosition(function(pos){
+  console.log('纬度'+pos.coords.latitude);
+  console.log('经度'+pos.coords.longitude);
+  console.log('精度'+pos.coords.accuracy);
+  navigator.geolocaction.clearwatch(watchID);   //清除位置信息
+})
+
+
+html5规范的本地存储:
+-------------------------------------
+localStroage  //始终存储在本地
+  .getItem(key)   
+  .setItem(key,name)
+  .removeItem(key)    //删除一条
+  .clear()            //删除所有本地存储
+sessionStroage  //只在会话期间有效
+  .getItem()
+  .setItem()
+  .removeItem()   //删除一条
+  .clear()        //删除所有本地存储
+cookie
+  document.cookie('name=')+'123';
+  
+tips:
+详说 Cookie, LocalStorage 与 SessionStorage:https://segmentfault.com/a/1190000002723469
+
+
+
+
+
+
+
+
   
 
 
