@@ -38,7 +38,7 @@ sessionStroage  //只在会话期间有效
   .removeItem()   //删除一条
   .clear()        //删除所有本地存储
 cookie
-  document.cookie('name=')+'123';
+  document.cookie='name=' + 'tk';
   
 tips:
 详说 Cookie, LocalStorage 与 SessionStorage:https://segmentfault.com/a/1190000002723469
