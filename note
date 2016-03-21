@@ -1,0 +1,8 @@
+
+Geolocation 地理位置定位：
+  getCurrentPosition()  获取当前位置
+  watchPosition()       监听位置变化
+  clearPosition()       清除位置信息
+  
+
+
