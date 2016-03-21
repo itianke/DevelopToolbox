@@ -1,5 +1,6 @@
 # 相关参考资料及说明
 ### 目录说明:
+****
 ##### common.js   
 手机号码验证，长度验证，是否为空验证，个位数字补0，日期格式化等
 
@@ -16,5 +17,5 @@
 html5地理位置定位,html5规范的本地存储
 
 ### 参考资料:
-***
+****
 [详说 Cookie, LocalStorage 与 SessionStorage](https://segmentfault.com/a/1190000002723469)
