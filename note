@@ -41,7 +41,7 @@ cookie
   document.cookie='name=' + 'tk';
   
 tips:
-详说 Cookie, LocalStorage 与 SessionStorage:https://segmentfault.com/a/1190000002723469
+详说 Cookie, LocalStorage 与 SessionStorage:[快速链接](https://segmentfault.com/a/1190000002723469)
 
 
 
