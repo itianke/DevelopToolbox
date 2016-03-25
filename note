@@ -5,7 +5,6 @@
 
 Geolocation 地理位置定位：
 -------------------------------------
-
 getCurrentPosition()  //获取当前位置
 watchPosition()       //监听位置变化
 clearPosition()       //清除位置信息
@@ -43,9 +42,23 @@ cookie
 tips:
 详说 Cookie, LocalStorage 与 SessionStorage:[快速链接](https://segmentfault.com/a/1190000002723469)
 
+离线与缓存:
+-------------------------------------
+manifest文件:
+ html添加manifest文件:  <html manifest="cache.manifest">
 
-
-
+cache.minifest文件结构:
+-------------------------------------
+|  CACHE MANIFEST  #需要缓存的文件  |
+|    index.html                     |
+|    sea.js                         |
+|    require.js                     |
+|  NETWORK  #不做缓存的文件         |
+|    /images/                       |
+|    base.js                        |
+|  FALLBACK                         |
+|    offine.html                    |
+-------------------------------------
 
 
 
