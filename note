@@ -46,17 +46,18 @@ tips:
 -------------------------------------
 manifest文件:
   html添加manifest文件:  <html manifest="cache.manifest">
+  
   cache.minifest文件结构:
   -------------------------------------
-  |  CACHE MANIFEST  #需要缓存的文件  |
-  |    index.html                     |
-  |    sea.js                         |
-  |    require.js                     |
-  |  NETWORK  #不做缓存的文件         |
-  |    /images/                       |
-  |    base.js                        |
-  |  FALLBACK                         |
-  |    offine.html                    |
+  CACHE MANIFEST  #需要缓存的文件  
+    index.html                     
+    sea.js                         
+    require.js                     
+  NETWORK  #不做缓存的文件         
+    /images/                       
+    base.js                        
+  FALLBACK                         
+    offine.html                    
   -------------------------------------
 
 
