@@ -21,3 +21,4 @@ html5地理位置定位,html5规范的本地存储
 [详说 Cookie, LocalStorage 与 SessionStorage](https://segmentfault.com/a/1190000002723469)
 
 ### 测试
+****
