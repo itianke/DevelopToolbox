@@ -69,10 +69,10 @@ var getaUrl = function(txt,typename,url,css){
     str+="<a class='"+css+"' href='"+url+"'>"+txt+"</a>";
     return str;
   }else{
-    if (browser.versions.ios){
-      str+="<a class='"+ css +"' href='app://"+typename+".'>"+txt+"</a>";
+    if(browser.versions.ios){
+      str+="<a class='"+css+"' href='app://"+typename+"."+url+"'>"+txt+"</a>";
     }else{
-      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','')\">"+txt+"</a>";
+      str+="<a class='"+css+"' href=\"javascript:furl('"+typename+"','"+url+"')\">"+txt+"</a>";
     }
     return str;
   }
