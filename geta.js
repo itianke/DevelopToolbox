@@ -48,11 +48,11 @@ var getQueryString = function(name) {
 }
 
 /**
- *@fun 跳转到详情页面
- *@txt 链接文本[可选]
- *@typename 跳转类型为固定写法[productDetail]
- *@id 产品ID
- *@css 类名[可选]
+ * @fun 跳转到详情页面
+ * @param {string} 链接文本[可选]
+ * @param {string} 跳转类型为固定写法[productDetial]
+ * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
+ * @param {string} 类名[可选]
  */
 var getaDetail = function(txt,typename,id,css){
   var str="";
@@ -74,10 +74,10 @@ var getaDetail = function(txt,typename,id,css){
 
 /**
  * @fun 跳转到列表页
- * @txt 链接文本[可选]
- * @typename 跳转类型为固定写法[productList]
- * @id 产品类型[1信托,2资管,3阳光私募,4其它]
- * @css 类名[可选]
+ * @param {string} 链接文本[可选]
+ * @param {string} 跳转类型为固定写法[productList]
+ * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
+ * @param {string} 类名[可选]
  */
 var getaList = function(txt,typename,id,css){ 
   var str="";
