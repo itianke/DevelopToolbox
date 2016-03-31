@@ -1,4 +1,3 @@
-
 //设备型号检测
 var browser = {
    versions: function() {
@@ -20,7 +19,8 @@ var browser = {
    language: (navigator.browserLanguage || navigator.language).toLowerCase()
 };
 
-function furl(typename, id) {
+//执行android跳转方式
+var furl = function(typename, id) {
   if (browser.versions.android) {
    window.androidactivity.runOnAndroidJavaScript(typename, id);
   }
@@ -38,7 +38,7 @@ function getliulanqi() {
 }
 
 //微信访问类型验证
-function getQueryString(name) {
+var getQueryString = function(name) {
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
   var r = window.location.search.substr(1).match(reg);
   if (r != null) {
@@ -47,42 +47,80 @@ function getQueryString(name) {
   return null;
 }
 
-//跳转到产品详情页 设置app及wechart跳转方式
-function geta(txt,typename,id){ 
+/**
+ *@fun 跳转到详情页面
+ *@txt 链接文本[可选]
+ *@typename 跳转类型为固定写法[productDetail]
+ *@id 产品ID
+ *@css 类名[可选]
+ */
+var getaDetail = function(txt,typename,id,css){
   var str="";
   var isWeixin = getQueryString("openId");
-  var host = window.location.host;
+  var openId = '{$openId}';
 
   if(isWeixin){
-    str+="<a href='"+id+"'></a>";
+    str+="<a class='"+ css +"' href='/product/Detail/index?productId="+id+"&openId="+openId+"&platform=1&transform_from=5'>"+txt+"</a>";
     return str;
   }else{
-    if (browser.versions.ios) {
-      str += "<a href='app://" + typename + "." + id + "'>" + txt + "</a>";
+    if (browser.versions.ios){
+      str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
+      //str+="<a href='"+id+"'></a>";
     }else{
-      str += "<a href=\"javascript:furl('" + typename + "','" + id + "')\">" + txt + "</a>";
+      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
     }
     return str;
   }
-}
+};
+
+/**
+ *@fun 跳转到列表页
+ *@txt 链接文本[可选]
+ *@typename 跳转类型为固定写法[productList]
+ *@id 产品类型[1信托,2资管,3阳光私募,4其它]
+ *@css 类名[可选]
+ */
+var getaList = function(txt,typename,id,css){ 
+  var str="";
+  var isWeixin = getQueryString("openId");
+  var openId = '{$openId}';
+
+  if(isWeixin){
+    str+="<a class='"+ css +"' href='/weixin/Weixin/allList?openId="+openId+"&platform=1&transform_from=4&typeId="+id+"'>"+txt+"</a>";
+    return str;
+  }else{
+    if (browser.versions.ios)
+    {
+      str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
+      //str+="<a href='"+id+"'></a>";
+    }
+    else 
+    {
+      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
+    }
+    return str;
+  }
+};
 
 
-//调用方法
-$(function(){
-  $('#d1').append(geta('产品详情','productDetail',65536));//产品id
-  $('#d1').append(geta('订单详情','orderDetail',1));//订单id
-  $('#d1').append(geta('预约列表','reservationList',1));//1待确认,2成功,3失败
-  $('#d1').append(geta('订单列表','orderList',1));//1 在途订单,2交易完成,3交易失败
-  $('#d1').append(geta('产品列表','productList',1));// 1信托,2资管,3阳光私募,4其它
-  $('#d1').append(geta('搜索页','search','keyword'));//搜索关键词
-  $('#d1').append(geta('订阅列表','favoriteList',0));
-  $('#d1').append(geta('编辑资料','editProfile',0));
-  $('#d1').append(geta('交易设置','tradeSet',0));
-  $('#d1').append(geta('优惠券','coupon',0));
-  $('#d1').append(geta('佣金钱包','wallet',0));
-  $('#d1').append(geta('身份认证','businessCard',0));
-  $('#d1').append(geta('登录后查看','login',0));
-  $('#d1').append(geta('webview','webview','https://www.baidu.com/'));
-})
+/**调用方法:
+  $(function(){
+    $('#d1').append(geta('产品详情','productDetail',65536));//产品id
+    $('#d1').append(geta('订单详情','orderDetail',1));//订单id
+    $('#d1').append(geta('预约列表','reservationList',1));//1待确认,2成功,3失败
+    $('#d1').append(geta('订单列表','orderList',1));//1 在途订单,2交易完成,3交易失败
+    $('#d1').append(geta('产品列表','productList',1));// 1信托,2资管,3阳光私募,4其它
+    $('#d1').append(geta('搜索页','search','keyword'));//搜索关键词
+    $('#d1').append(geta('订阅列表','favoriteList',0));
+    $('#d1').append(geta('编辑资料','editProfile',0));
+    $('#d1').append(geta('交易设置','tradeSet',0));
+    $('#d1').append(geta('优惠券','coupon',0));
+    $('#d1').append(geta('佣金钱包','wallet',0));
+    $('#d1').append(geta('身份认证','businessCard',0));
+    $('#d1').append(geta('登录后查看','login',0));
+    $('#d1').append(geta('webview','webview','https://www.baidu.com/'));
+  })
+ */
+
 
 
