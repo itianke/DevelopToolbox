@@ -65,7 +65,6 @@ var getaDetail = function(txt,typename,id,css){
   }else{
     if (browser.versions.ios){
       str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
-      //str+="<a href='"+id+"'></a>";
     }else{
       str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
     }
@@ -89,13 +88,9 @@ var getaList = function(txt,typename,id,css){
     str+="<a class='"+ css +"' href='/weixin/Weixin/allList?openId="+openId+"&platform=1&transform_from=4&typeId="+id+"'>"+txt+"</a>";
     return str;
   }else{
-    if (browser.versions.ios)
-    {
+    if (browser.versions.ios){
       str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
-      //str+="<a href='"+id+"'></a>";
-    }
-    else 
-    {
+    }else{
       str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
     }
     return str;
