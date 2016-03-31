@@ -54,10 +54,10 @@ var getQueryString = function(name){
 }
 
 /**
- * @fun 跳转到固定链接页面
+ * @function 跳转到固定链接页面
  * @param {string} 链接文本[可选]
- * @param {string} 跳转类型为固定写法[productDetial]
- * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
+ * @param {string} 跳转类型为固定写法[webview]
+ * @param {string} url地址
  * @param {string} 类名[可选]
  */
 var getaUrl = function(txt,typename,url,css){
@@ -66,20 +66,20 @@ var getaUrl = function(txt,typename,url,css){
   var openId = '{$openId}';
 
   if(isWeixin){
-    str+="<a class='"+css+"' href='"+typename+url+"'>"+txt+"</a>";
+    str+="<a class='"+css+"' href='"+url+"'>"+txt+"</a>";
     return str;
   }else{
     if (browser.versions.ios){
-      str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
+      str+="<a class='"+ css +"' href='app://"+typename+".'>"+txt+"</a>";
     }else{
-      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
+      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','')\">"+txt+"</a>";
     }
     return str;
   }
 };
 
 /**
- * @fun 跳转到详情页面
+ * @function 跳转到详情页面
  * @param {string} 链接文本[可选]
  * @param {string} 跳转类型为固定写法[productDetial]
  * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
@@ -104,7 +104,7 @@ var getaDetail = function(txt,typename,id,css){
 };
 
 /**
- * @fun 跳转到列表页
+ * @function 跳转到列表页
  * @param {string} 链接文本[可选]
  * @param {string} 跳转类型为固定写法[productList]
  * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
