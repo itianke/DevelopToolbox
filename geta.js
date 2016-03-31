@@ -1,3 +1,9 @@
+/**
+ * @author tk
+ * @date 2016-03-29
+ * @dis webview页面跳转方式
+ */
+
 //设备型号检测
 var browser = {
    versions: function() {
@@ -20,14 +26,14 @@ var browser = {
 };
 
 //执行android跳转方式
-var furl = function(typename, id) {
+var furl = function(typename, id){
   if (browser.versions.android) {
    window.androidactivity.runOnAndroidJavaScript(typename, id);
   }
 };
 
 //获取浏览器类型检测
-function getliulanqi() {
+var getliulanqi = function(){
   if (browser.versions.ios) {
     alert("IOS")
   } else if (browser.versions.android) {
@@ -38,7 +44,7 @@ function getliulanqi() {
 }
 
 //微信访问类型验证
-var getQueryString = function(name) {
+var getQueryString = function(name){
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
   var r = window.location.search.substr(1).match(reg);
   if (r != null) {
@@ -46,6 +52,31 @@ var getQueryString = function(name) {
   }
   return null;
 }
+
+/**
+ * @fun 跳转到固定链接页面
+ * @param {string} 链接文本[可选]
+ * @param {string} 跳转类型为固定写法[productDetial]
+ * @param {number} 产品类型[1信托,2资管,3阳光私募,4其它]
+ * @param {string} 类名[可选]
+ */
+var getaUrl = function(txt,typename,url,css){
+  var str="";
+  var isWeixin = getQueryString("openId");
+  var openId = '{$openId}';
+
+  if(isWeixin){
+    str+="<a class='"+css+"' href='"+typename+url+"'>"+txt+"</a>";
+    return str;
+  }else{
+    if (browser.versions.ios){
+      str+="<a class='"+ css +"' href='app://"+typename+"."+id+"'>"+txt+"</a>";
+    }else{
+      str+="<a class='"+ css +"' href=\"javascript:furl('"+typename+"','"+id+"')\">"+txt+"</a>";
+    }
+    return str;
+  }
+};
 
 /**
  * @fun 跳转到详情页面
